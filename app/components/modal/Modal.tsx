@@ -4,8 +4,6 @@ import { Dialog, Transition } from "@headlessui/react";
 import { ReactElement, Fragment } from "react";
 import { AiOutlineClose } from "react-icons/ai";
 
-import Button from "../inputs/Button";
-
 interface Props {
   isOpen: boolean;
   onClose: () => void;

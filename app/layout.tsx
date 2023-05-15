@@ -6,8 +6,9 @@ import LoginModal from "./components/modal/LoginModal";
 import RegisterModal from "./components/modal/RegisterModal";
 import Navbar from "./components/nav/Navbar";
 import { getCurrentUser } from "./actions/getCurrentUser";
+import ListingModal from "./components/modal/ListingModal";
 
-const nunito = Nunito({ subsets: ["latin"] });
+const nunito = Nunito({ subsets: ["latin"], variable: "--font-nunito" });
 
 export const metadata = {
   title: "Booklett",
@@ -23,11 +24,12 @@ async function RootLayout({ children }: Props) {
 
   return (
     <html lang="en">
-      <body className={nunito.className}>
+      <body className={`${nunito.variable} font-sans`}>
         <Toaster />
         <Navbar currentUser={currentUser} />
         <RegisterModal />
         <LoginModal />
+        <ListingModal />
         {children}
       </body>
     </html>

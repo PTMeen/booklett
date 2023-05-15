@@ -15,6 +15,7 @@ import { toast } from "react-hot-toast";
 import MenuButton from "./MenuButton";
 import useRegisterModal from "@/app/hooks/useRegisterModal";
 import useLoginModal from "@/app/hooks/useLoginModal";
+import useListingModal from "@/app/hooks/useListingModal";
 
 interface Props {
   currentUser: User | null;
@@ -23,6 +24,7 @@ interface Props {
 function UserMenu({ currentUser }: Props) {
   const registerModal = useRegisterModal();
   const loginModal = useLoginModal();
+  const listingModal = useListingModal();
 
   const unautedMeuItems = [
     {
@@ -61,7 +63,7 @@ function UserMenu({ currentUser }: Props) {
     {
       label: "Booklett my home",
       icon: AiOutlineHome,
-      onClick: () => {},
+      onClick: listingModal.onOpen,
     },
     {
       label: "Logout",
@@ -73,9 +75,7 @@ function UserMenu({ currentUser }: Props) {
     },
   ];
 
-  const menuItems = useMemo(() => {
-    return currentUser ? authedMenuItems : unautedMeuItems;
-  }, [currentUser]);
+  const menuItems = currentUser ? authedMenuItems : unautedMeuItems;
 
   return (
     <Menu

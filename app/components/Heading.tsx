@@ -6,7 +6,7 @@ interface Props {
 function Heading({ title, subtitle }: Props) {
   return (
     <div>
-      <h2 className="mb-2 text-3xl font-bold">{title}</h2>
+      <h2 className="mb-2 text-2xl font-bold">{title}</h2>
       {subtitle ? (
         <p className="text-lg text-neutral-500">{subtitle}</p>
       ) : null}{" "}

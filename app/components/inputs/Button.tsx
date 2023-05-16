@@ -31,7 +31,7 @@ function Button({
       onClick={onClick}
       disabled={disabled}
       type={type}
-      className={` rounded-lg border  text-center text-lg font-semibold disabled:opacity-70 hover:opacity-70
+      className={` rounded-lg border  text-center text-lg font-semibold disabled:opacity-70 disabled:cursor-not-allowed hover:opacity-70
       ${className}
       ${small ? "px-3 py-1" : "py-3 px-5"}
       ${

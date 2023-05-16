@@ -30,7 +30,7 @@ async function RootLayout({ children }: Props) {
         <RegisterModal />
         <LoginModal />
         <ListingModal />
-        {children}
+        <div className="pb-20 pt-36">{children}</div>
       </body>
     </html>
   );

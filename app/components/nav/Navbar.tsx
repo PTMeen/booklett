@@ -17,7 +17,7 @@ function Navbar({ currentUser }: Props) {
   const listingModal = useListingModal();
 
   return (
-    <header className="border-b-[1px] border-neutral-200 bg-neutral-50 pt-6 relative">
+    <header className="border-b-[1px] w-full top-0 left-0 fixed border-neutral-200 bg-neutral-50 pt-6">
       <Container>
         <div className="flex items-center justify-between gap-4">
           <Logo />

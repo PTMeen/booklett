@@ -1,7 +1,6 @@
 "use client";
 
 import { Listing, User } from "@prisma/client";
-import Link from "next/link";
 
 import useCountries from "@/app/hooks/useCountries";
 import Image from "next/image";

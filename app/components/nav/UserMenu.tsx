@@ -49,12 +49,12 @@ function UserMenu({ currentUser }: Props) {
     {
       label: "My favorites",
       icon: AiOutlineHeart,
-      onClick: () => {},
+      onClick: () => router.push("/favorites"),
     },
     {
       label: "My properties",
       icon: BiBuildingHouse,
-      onClick: () => {},
+      onClick: () => router.push("/properties"),
     },
     {
       label: "My reservations",

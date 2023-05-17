@@ -8,13 +8,16 @@ import useCountries, { CountryType } from "@/app/hooks/useCountries";
 
 interface Props {
   onCountryChange: (country: CountryType) => void;
+  country: CountryType;
 }
 
-function CountrySelect({ onCountryChange }: Props) {
+function CountrySelect({ onCountryChange, country }: Props) {
   const { getAllCountries } = useCountries();
   const countries = getAllCountries();
 
-  const [selectedCountry, setSelectedCountry] = useState(countries[0]);
+  const [selectedCountry, setSelectedCountry] = useState(
+    country || countries[0]
+  );
   const [query, setQuery] = useState("");
 
   const filteredCountries =

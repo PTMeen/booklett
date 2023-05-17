@@ -24,7 +24,10 @@ function LocationStep({ onLocationChange, location }: Props) {
         title="Where is your place located?"
         subtitle="Help guest find you"
       />
-      <CountrySelect onCountryChange={onLocationChange} />
+      <CountrySelect
+        onCountryChange={onLocationChange}
+        country={location}
+      />
       <Map center={location.latlng} />
     </div>
   );

@@ -7,12 +7,14 @@ interface Props {
   title?: string;
   subtitle?: string;
   showResetBtn?: boolean;
+  actionLabel?: string;
 }
 
 function EmptyState({
   title = "Oh no!",
   subtitle = "Something went wrong",
   showResetBtn,
+  actionLabel = "Remove all filters",
 }: Props) {
   const router = useRouter();
 
@@ -22,7 +24,7 @@ function EmptyState({
       <p className="mb-6 text-neutral-600">{subtitle}</p>
       {showResetBtn && (
         <Button
-          label="Remove all filters"
+          label={actionLabel}
           outline
           onClick={() => router.push("/")}
         />

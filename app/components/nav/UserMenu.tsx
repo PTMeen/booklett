@@ -1,7 +1,7 @@
 "use client";
 
-import { useMemo } from "react";
 import { signOut } from "next-auth/react";
+import { useRouter } from "next/navigation";
 import { Menu, Transition } from "@headlessui/react";
 import { MdLogin, MdLogout } from "react-icons/md";
 import { FaRegIdCard } from "react-icons/fa";
@@ -22,6 +22,7 @@ interface Props {
 }
 
 function UserMenu({ currentUser }: Props) {
+  const router = useRouter();
   const registerModal = useRegisterModal();
   const loginModal = useLoginModal();
   const listingModal = useListingModal();
@@ -43,7 +44,7 @@ function UserMenu({ currentUser }: Props) {
     {
       label: "My trips",
       icon: FaPlaneDeparture,
-      onClick: () => {},
+      onClick: () => router.push("/trips"),
     },
     {
       label: "My favorites",

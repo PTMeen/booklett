@@ -2,7 +2,7 @@
 
 import { MouseEvent } from "react";
 import { User } from "@prisma/client";
-import { AiOutlineHeart, AiFillHeart } from "react-icons/ai";
+import { AiOutlineHeart } from "react-icons/ai";
 import useLike from "@/app/hooks/useLike";
 
 interface Props {

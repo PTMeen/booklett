@@ -7,7 +7,7 @@ import useLike from "@/app/hooks/useLike";
 
 interface Props {
   listingId: string;
-  currentUser: User | null;
+  currentUser?: User | null;
 }
 
 function LikeButton({ currentUser, listingId }: Props) {

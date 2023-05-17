@@ -1,6 +1,6 @@
 import { CATEGORIES } from "@/app/constants/categories";
-import Heading from "../Heading";
-import CategoryInput from "../inputs/CategoryInput";
+import CategoryInput from "../../inputs/CategoryInput";
+import Heading from "../../Heading";
 
 interface Props {
   onSelect: (category: string) => void;

@@ -5,7 +5,7 @@ import { TbPhotoPlus } from "react-icons/tb";
 import Image from "next/image";
 import { CldUploadWidget } from "next-cloudinary";
 
-import Heading from "../Heading";
+import Heading from "../../Heading";
 
 interface Props {
   imageSrc: string;

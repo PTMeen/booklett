@@ -1,7 +1,6 @@
 "use client";
 
-import { ChangeEvent } from "react";
-import Heading from "../Heading";
+import Heading from "../../Heading";
 
 interface Props {
   title: string;

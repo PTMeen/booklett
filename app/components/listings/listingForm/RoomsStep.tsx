@@ -1,7 +1,7 @@
 import { Dispatch, SetStateAction } from "react";
 
-import Heading from "../Heading";
-import Counter from "../inputs/Counter";
+import Heading from "../../Heading";
+import Counter from "../../inputs/Counter";
 
 interface Props {
   guestCount: number;

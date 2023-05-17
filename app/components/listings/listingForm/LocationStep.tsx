@@ -1,8 +1,10 @@
 import { CountryType } from "@/app/hooks/useCountries";
-import Heading from "../Heading";
-import CountrySelect from "../inputs/CountrySelect";
+
 import { useMemo } from "react";
 import dynamic from "next/dynamic";
+
+import Heading from "../../Heading";
+import CountrySelect from "../../inputs/CountrySelect";
 
 interface Props {
   onLocationChange: (value: CountryType) => void;

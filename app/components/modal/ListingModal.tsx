@@ -33,7 +33,9 @@ function ListingModal() {
   const [isLoading, setIsLoading] = useState(false);
   const [step, setStep] = useState(STEPS.CATEGORY);
   const [selectedCategory, setSelectedCataegory] = useState("");
-  const [selectedLocation, setSelectedLocation] = useState(countries[0]);
+  const [selectedLocation, setSelectedLocation] = useState<CountryType | null>(
+    countries[0]
+  );
   const [guestCount, setGuestCount] = useState(1);
   const [roomCount, setRoomCount] = useState(1);
   const [bathroomCount, setBathroomCount] = useState(1);
@@ -130,7 +132,7 @@ function ListingModal() {
   if (step === STEPS.LOCATION) {
     stepContent = (
       <LocationStep
-        onLocationChange={(location: CountryType) =>
+        onLocationChange={(location: CountryType | null) =>
           setSelectedLocation(location)
         }
         location={selectedLocation}

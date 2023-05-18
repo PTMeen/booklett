@@ -1,24 +1,44 @@
 "use client";
 
+import { useState } from "react";
+import { useRouter } from "next/navigation";
 import { Listing, User } from "@prisma/client";
+import { toast } from "react-hot-toast";
+import axios from "axios";
 
 import useCountries from "@/app/hooks/useCountries";
 import Image from "next/image";
 import LikeButton from "../inputs/LikeButton";
-import { useRouter } from "next/navigation";
+import Button from "../inputs/Button";
 
 interface Props {
   data: Listing;
   currentUser: User | null;
+  showDeleteButton?: boolean;
 }
 
-function ListingCard({ data, currentUser }: Props) {
+function ListingCard({ data, currentUser, showDeleteButton }: Props) {
   const router = useRouter();
 
   const { title, locationValue, category, price, imageSrc, id } = data;
   const { getCountryByValue } = useCountries();
 
+  const [isLoading, setIsLoading] = useState(false);
+
   const location = getCountryByValue(locationValue);
+
+  const onRemoveProperty = async () => {
+    try {
+      setIsLoading(true);
+      await axios.delete(`/api/listings/${data.id}`);
+      router.refresh();
+      toast.success("Property remove");
+    } catch (error) {
+      toast.error("Something went wrong");
+    } finally {
+      setIsLoading(false);
+    }
+  };
 
   return (
     <div
@@ -51,6 +71,20 @@ function ListingCard({ data, currentUser }: Props) {
           <span className="font-bold">${price}</span> night
         </p>
       </article>
+
+      {showDeleteButton && (
+        <div className="p-4">
+          <Button
+            label="Remove property"
+            outline
+            className="w-full"
+            disabled={isLoading}
+            onClick={onRemoveProperty}
+            type="button"
+            small
+          />
+        </div>
+      )}
     </div>
   );
 }

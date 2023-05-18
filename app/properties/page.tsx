@@ -32,6 +32,7 @@ async function PropertiesPage() {
             key={listing.id}
             data={listing}
             currentUser={currentUser}
+            showDeleteButton
           />
         ))}
       </div>

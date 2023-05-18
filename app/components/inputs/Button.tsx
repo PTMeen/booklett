@@ -1,5 +1,6 @@
 "use client";
 
+import { MouseEvent } from "react";
 import { IconType } from "react-icons/lib";
 import { SyncLoader } from "react-spinners";
 
@@ -26,9 +27,14 @@ function Button({
   icon: Icon,
   isLoading,
 }: Props) {
+  const handleClick = (e: MouseEvent<HTMLButtonElement>) => {
+    e.stopPropagation();
+    onClick();
+  };
+
   return (
     <button
-      onClick={onClick}
+      onClick={handleClick}
       disabled={disabled}
       type={type}
       className={` rounded-lg border  text-center text-lg font-semibold disabled:opacity-70 disabled:cursor-not-allowed hover:opacity-70

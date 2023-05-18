@@ -7,8 +7,8 @@ import Heading from "../../Heading";
 import CountrySelect from "../../inputs/CountrySelect";
 
 interface Props {
-  onLocationChange: (value: CountryType) => void;
-  location: CountryType;
+  onLocationChange: (value: CountryType | null) => void;
+  location: CountryType | null;
 }
 
 function LocationStep({ onLocationChange, location }: Props) {
@@ -28,7 +28,7 @@ function LocationStep({ onLocationChange, location }: Props) {
         onCountryChange={onLocationChange}
         country={location}
       />
-      <Map center={location.latlng} />
+      <Map center={location?.latlng} />
     </div>
   );
 }

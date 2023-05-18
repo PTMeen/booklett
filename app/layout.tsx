@@ -7,6 +7,7 @@ import RegisterModal from "./components/modal/RegisterModal";
 import Navbar from "./components/nav/Navbar";
 import { getCurrentUser } from "./actions/getCurrentUser";
 import ListingModal from "./components/modal/ListingModal";
+import SearchModal from "./components/modal/SearchModal";
 
 const nunito = Nunito({ subsets: ["latin"], variable: "--font-nunito" });
 
@@ -30,6 +31,7 @@ async function RootLayout({ children }: Props) {
         <RegisterModal />
         <LoginModal />
         <ListingModal />
+        <SearchModal />
         <div className="pb-20 pt-36">{children}</div>
       </body>
     </html>

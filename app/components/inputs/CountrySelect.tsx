@@ -7,17 +7,15 @@ import { BiChevronDown } from "react-icons/bi";
 import useCountries, { CountryType } from "@/app/hooks/useCountries";
 
 interface Props {
-  onCountryChange: (country: CountryType) => void;
-  country: CountryType;
+  onCountryChange: (country: CountryType | null) => void;
+  country: CountryType | null;
 }
 
 function CountrySelect({ onCountryChange, country }: Props) {
   const { getAllCountries } = useCountries();
   const countries = getAllCountries();
 
-  const [selectedCountry, setSelectedCountry] = useState(
-    country || countries[0]
-  );
+  const [selectedCountry, setSelectedCountry] = useState(country);
   const [query, setQuery] = useState("");
 
   const filteredCountries =
@@ -35,12 +33,15 @@ function CountrySelect({ onCountryChange, country }: Props) {
     <Combobox
       value={selectedCountry}
       onChange={setSelectedCountry}
+      nullable
     >
       <div className="relative">
         <div className="border-[1px] border-neutral-200 rounded-lg p-2 flex items-center">
           <Combobox.Input
             onChange={(e) => setQuery(e.target.value)}
-            displayValue={(county: CountryType) => county?.label}
+            displayValue={(county: CountryType | null) =>
+              county?.label || "Select country"
+            }
             className="flex-grow font-semibold outline-none focus:outline-none"
           />
           <Combobox.Button>

@@ -12,7 +12,7 @@ interface Props {
   disabledDates?: Date[];
 }
 
-function Calandar({ onChange, value, disabledDates }: Props) {
+function Calandar({ onChange, value, disabledDates = [] }: Props) {
   return (
     <DateRange
       rangeColors={[colors.orange[500]]}

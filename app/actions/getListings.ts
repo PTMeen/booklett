@@ -57,9 +57,14 @@ const getListings = async ({
         reservations: {
           some: {
             OR: [
-              { endDate: { gte: startDate } },
-              { startDate: { lte: startDate } },
-              { startDate: { lte: endDate }, endDate: { gte: endDate } },
+              {
+                endDate: { gte: startDate },
+                startDate: { lte: startDate },
+              },
+              {
+                startDate: { lte: endDate },
+                endDate: { gte: endDate },
+              },
             ],
           },
         },

@@ -7,7 +7,6 @@ import Link from "next/link";
 
 import { ReservationWithListing } from "../types";
 import useCountries from "../hooks/useCountries";
-import { User } from "@prisma/client";
 import CancelButton from "./CancelButton";
 
 interface Props {

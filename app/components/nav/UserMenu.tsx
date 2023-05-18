@@ -59,7 +59,7 @@ function UserMenu({ currentUser }: Props) {
     {
       label: "My reservations",
       icon: BsTicketPerforated,
-      onClick: () => {},
+      onClick: () => router.push("/reservations"),
     },
     {
       label: "Booklett my home",

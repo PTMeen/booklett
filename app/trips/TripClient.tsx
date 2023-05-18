@@ -5,6 +5,7 @@ import TripCard from "./TripCard";
 
 interface Props {
   reservations: ReservationWithListing[];
+  currentUser?: User | null;
 }
 
 function TripClient({ reservations }: Props) {
